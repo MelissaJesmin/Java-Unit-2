@@ -5,81 +5,7 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
         // Create a new class named Cupcake. This will be the class all other cupcakes inherit from
-        class Cupcake {
-
-            // Create a public double variable named price, but do not assign it a value
-            public double price;
-
-            // Create a public function named getPrice that has no parameters and returns the price
-            public double getPrice() {
-                return price;
-            }
-
-            // Create a public function named setPrice that has one parameter, a double named price, and returns void
-            public void setPrice(double price) {
-                this.price = price;
-            }
-
-            // Create a public function named type that prints a description and returns void
-            public void type() {
-                System.out.println("A basic, generic cupcake, with vanilla frosting");
-            }
-
-        }
-
-        // Create a new class named RedVelvet that extends from Cupcake
-        class RedVelvet extends Cupcake {
-
-            // Create a public function named type that returns void and prints a description of the cupcake
-            @Override
-            public void type() {
-                System.out.println("A red velvet based cupcake, with cream cheese frosting.");
-            }
-        }
-
-        // Create a new class named Chocolate that extends from Cupcake
-        class Chocolate extends Cupcake {
-
-            // Create a public function named type that returns void and prints a description of the cupcake
-            @Override
-            public void type() {
-                System.out.println("A chocolate based cupcake, with chocolate frosting.");
-            }
-        }
-
-        class Drink {
-
-            public double price;
-
-            public double getPrice() {
-                return price;
-            }
-
-            public void setPrice(double price) {
-                this.price = price;
-            }
-
-            public void type() {
-                System.out.println("A bottle of water");
-            }
-
-        }
-
-        class Soda extends Drink {
-            @Override
-            public void type() {
-                System.out.println("A bottle of soda.");
-            }
-        }
-
-            class Milk extends Drink {
-            @Override
-            public void type() {
-                System.out.println("A bottle of milk.");
-            }
-        }
 
         // Create a new ArrayList which contains Cupcake and call it cupcakeMenu
         ArrayList<Cupcake> cupcakeMenu = new ArrayList<Cupcake>();
@@ -168,6 +94,82 @@ public class Main {
         drinkMenu.add(water);
         drinkMenu.add(soda);
         drinkMenu.add(milk);
+
+        new Order(cupcakeMenu, drinkMenu);
+    }
+}
+
+    class Cupcake {
+
+        // Create a public double variable named price, but do not assign it a value
+        public double price;
+
+        // Create a public function named getPrice that has no parameters and returns the price
+        public double getPrice() {
+            return price;
+        }
+
+        // Create a public function named setPrice that has one parameter, a double named price, and returns void
+        public void setPrice(double price) {
+            this.price = price;
+        }
+
+        // Create a public function named type that prints a description and returns void
+        public void type() {
+            System.out.println("A basic, generic cupcake, with vanilla frosting");
+        }
+
     }
 
-}
+    // Create a new class named RedVelvet that extends from Cupcake
+    class RedVelvet extends Cupcake {
+
+        // Create a public function named type that returns void and prints a description of the cupcake
+        @Override
+        public void type() {
+            System.out.println("A red velvet based cupcake, with cream cheese frosting.");
+        }
+    }
+
+    // Create a new class named Chocolate that extends from Cupcake
+    class Chocolate extends Cupcake {
+
+        // Create a public function named type that returns void and prints a description of the cupcake
+        @Override
+        public void type() {
+            System.out.println("A chocolate based cupcake, with chocolate frosting.");
+        }
+    }
+
+    class Drink {
+
+        public double price;
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price) {
+            this.price = price;
+        }
+
+        public void type() {
+            System.out.println("A bottle of water");
+        }
+
+    }
+
+    class Soda extends Drink {
+        @Override
+        public void type() {
+            System.out.println("A bottle of soda.");
+        }
+    }
+
+    class Milk extends Drink {
+        @Override
+        public void type() {
+            System.out.println("A bottle of milk.");
+        }
+    }
+
